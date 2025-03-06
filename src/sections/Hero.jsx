@@ -10,8 +10,12 @@ import { calculateSizes } from "../constants/index.js";
 // Components
 import CanvasLoader from "../components/CanvasLoader";
 import HackerRoom from "../components/HackerRoom";
+import Cube from "../components/Cube.jsx";
 import Target from "../components/Target.jsx";
 import ReactLogo from "../components/ReactLogo.jsx";
+import Rings from "../components/Rings.jsx";
+import HeroCamera from "../components/HeroCamera.jsx";
+import Button from "../components/Button.jsx";
 
 const Hero = () => {
 
@@ -33,22 +37,36 @@ const Hero = () => {
               <Suspense fallback={<CanvasLoader/>}>
               <PerspectiveCamera makeDefault position={[0,0,20]} />
 
-              <HackerRoom 
-              scale={sizes.deskScale} 
-              position={sizes.deskPosition} 
-              rotation={[0.0, -Math.PI, 0]}
-              />
+              <HeroCamera isMobile={isMobile}>
+                <HackerRoom 
+                scale={sizes.deskScale} 
+                position={sizes.deskPosition} 
+                rotation={[0.0, -Math.PI, 0]}
+                />
+              </HeroCamera>
 
+              
               <group>
                 <Target position={sizes.targetPosition} />
                 <ReactLogo position={sizes.reactLogoPosition} />
+                <Cube position={sizes.cubePosition} />
+                <Rings position={sizes.ringPosition} />
               </group>
 
               <ambientLight intensity={1}/>
               <directionalLight position={[10, 10, 10]} intensity={0.5} />
               </Suspense>
             </Canvas>
-        </div>    
+        </div>
+
+        <div className="absolute bottom-7 left-0 right-0 w-full z-10 c-space">
+          <a href="#contact" className="w-fit">
+            <Button name="Let's work together" isBeam containerClass="sm:w-fit w-full sm:min-w-96" />
+          </a>
+
+        </div>
+      
+
     </section>
   );
 };
