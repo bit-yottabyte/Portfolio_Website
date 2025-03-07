@@ -2,7 +2,7 @@ import { useRef } from "react";
 import { useFrame } from "@react-three/fiber";
 import { easing } from "maath";
  
-const HeroCamera = ({ children, isMobile }) => {
+const HeroCamera = ({ isMobile, children }) => {
     const groupRef = useRef();
 
     useFrame((state, delta) => {
@@ -16,6 +16,6 @@ const HeroCamera = ({ children, isMobile }) => {
   return (
     <group ref={groupRef} scale={isMobile ? 1 : 1.3}>{children}</group>
   )
-}
+};
 
-export default HeroCamera
+export default HeroCamera;
