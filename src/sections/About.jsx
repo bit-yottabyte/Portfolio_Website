@@ -14,7 +14,7 @@ const About = () => {
         }, 2000)
     }
   return (
-    <section className="c-space my-20">
+    <section className="c-space my-20" id="about">
         <div className="grid xl:grid-cols-3 xlLgrid-rows-6 md:grid-cols-2 grid-cols-1 gap-5 h-full">
             <div className="col-span-1 xl:row-span-3">
                 <div className="grid-container">
@@ -31,7 +31,7 @@ const About = () => {
                     <img src="/assets/grid2.png" alt="grid-2" className="w-full sm:w-[276px] h-fit object-contain"/>
                     <div>
                         <p className="grid-headtext">Tech Stack</p>
-                        <p className="grid-subtext">I specialise in ... pick something to specialise in Athavan</p>
+                        <p className="grid-subtext">I specialize in ... pick something to specialize in Athavan</p>
                     </div>
                 </div>
             </div>
@@ -59,7 +59,9 @@ const About = () => {
                     <div>
                         <p className="grid-headtext">I work remotely across most timezones.</p>
                         <p className="grid-subtext">I'm based in Markham, Ontario Canada, but I am willing to relocate!</p>
-                        <Button name="Contact Me" isBeam containerClass="w-full mt-10"/>
+                        <a href="#contact">
+                            <Button name="Contact Me" isBeam containerClass="w-full mt-10"/>
+                        </a>
                     </div>
                 </div>
             </div>
