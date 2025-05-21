@@ -30,7 +30,7 @@ const Contact = () => {
                     email: form.email,
                     message: form.message,
                 },
-                'z7qqNSkFt72JSXAXV'
+                process.env.REACT_APP_EMAILJS_API_KEY
             )
             
             setLoading(false);
